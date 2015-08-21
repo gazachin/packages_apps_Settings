@@ -1379,6 +1379,9 @@
     <string name="notification_title">Notification panel</string>
     <string name="status_bar_custom_header_title">Custom header image</string>
     <string name="status_bar_custom_header_summary">Enable notification panel header image</string>
+   <string name="contextual_title">Contextual headers</string>
+   <string name="status_bar_custom_header_title">Custom header image</string>
+   <string name="status_bar_custom_header_summary">Enable notification panel header image</string>
     
     <!-- Aicp Settings Tabs -->
     <string name="aicp_settings_tab1">Inter Face</string>
@@ -1386,4 +1389,7 @@
     <string name="aicp_settings_tab3">System</string>
     <string name="aicp_settings_tab4">Tweaks</string>
 
+    <!-- Device policy override -->
+    <string name="device_policy_override_title">Device policy override</string>
+    <string name="device_policy_override_summary">Allow apps to force secure lock screen and override profile settings</string>
 </resources>
