@@ -50,7 +50,7 @@
     <string name="show_dev_already_aicp">No need, you have already enabled development settings.</string>
 
     <!-- Aicp Settings -->
-    <string name="aicp_settings_title">AICP Extras</string>
+    <string name="aicp_settings_title">AICP Tools</string>
     <string name="aicp_ota_settings_title">Aicp OTA</string>
     <string name="battery_settings_title">Battery settings</string>
     <string name="status_bar_battery_title">Battery icon</string>
@@ -149,7 +149,7 @@
     <string name="ime_switcher_notify_summary">Display input method selector notification</string>
 
     <!-- Various shit -->
-    <string name="various_shit_title">Various Shit</string>
+    <string name="various_shit_title">Extra Mods</string>
     <string name="battery_percentage_title">Battery percentage</string>
     <string name="battery_percentage_summary">Show percentage in battery icon.</string>
     <string name="proximity_on_wake_title">Proximity on wake</string>
@@ -158,7 +158,7 @@
     <string name="aicp_notifications_category">Notifications</string>
     <string name="navigation_bar_category">Navigation Bar</string>
     <string name="navigation_ring_category">Navigation Ring</string>
-    <string name="aicp_extras_category">More Shit</string>
+    <string name="aicp_extras_category">More Mods</string>
 
     <!-- Per app controls for LP keyguard notifications -->
     <string name="app_notification_show_on_keyguard_title">Show on locks creen</string>
