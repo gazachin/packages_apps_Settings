@@ -56,6 +56,12 @@
         android:fragment="com.android.settings.aicp.gestureanywhere.GestureAnywhereSettings"
         android:title="@string/gesture_anywhere_title" />
 
+    <!-- Handcontrol Options -->
+    <PreferenceScreen
+        android:key="handcontrol"
+        android:fragment="com.android.settings.aicp.HandControl"	
+        android:title="@string/handcontrol_title" />
+
     <!-- Heads up notifications -->
     <Preference
          android:key="heads_up_enabled"

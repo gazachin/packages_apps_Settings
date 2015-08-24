@@ -41,6 +41,7 @@ import com.android.settings.aicp.BreathingNotifications;
 import com.android.settings.aicp.CarrierLabel;
 import com.android.settings.aicp.DisplayAnimationsSettings;
 import com.android.settings.aicp.HeadsUpSettings;
+import com.android.settings.aicp.HandControl;
 import com.android.settings.aicp.LockScreenColorSettings;
 import com.android.settings.aicp.LockScreenWeatherSettings;
 import com.android.settings.aicp.NavBarDimensions;
@@ -501,6 +502,13 @@ public final class SearchIndexableResources {
                         Ranking.getRankForClassName(SoundSettings.class.getName()),
                         NO_DATA_RES_ID,
                         SoundSettings.class.getName(),
+                        R.drawable.ic_settings_aicp));
+
+        sResMap.put(HandControl.class.getName(),
+                new SearchIndexableResource(
+                        Ranking.getRankForClassName(HandControl.class.getName()),
+                        NO_DATA_RES_ID,
+                        HandControl.class.getName(),
                         R.drawable.ic_settings_aicp));
     }
 

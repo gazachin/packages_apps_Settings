@@ -44,13 +44,6 @@
             android:defaultValue="true"
             android:dependency="show_clear_all_recents" />
 
-        <!-- Shake to Clear Recents -->
-        <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
-            android:key="shake_clean_recent"
-            android:title="@string/shake_clear_recents"
-            android:summary="@string/shake_clear_recents_summary"
-            android:defaultValue="false" />
-
         <!-- Memory Bar -->
         <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
             android:key="systemui_recents_mem_display"

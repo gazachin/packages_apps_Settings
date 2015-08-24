@@ -1344,6 +1344,13 @@
     <string name="three_finger_gesture">Three finger gesture</string>
     <string name="three_finger_gesture_summary">Swipe three finger to screenshot</string>
 
+    <!--HandControl Settings -->
+    <string name="handcontrol_title">Hand Control</string>
+    <string name="shake_clear_recents">Clean recents</string>
+    <string name="shake_clear_recents_summary">Clear recents by shake</string>
+    <string name="shake_clean_notification">Clean notifications</string>
+    <string name="shake_clean_notification_summary">Clean notification by shake</string>
+
     <!-- Scrolling Cache -->
     <string name="pref_scrollingcache_title">Scrolling cache</string>
     <string name="pref_scrollingcache_summary">Scrolling cache may improve scrolling performance at the cost of memory</string>
@@ -1351,9 +1358,6 @@
     <string name="pref_scrollingcache_default_enable">Default enable</string>
     <string name="pref_scrollingcache_default_disable">Default disable</string>
     <string name="pref_scrollingcache_force_disable">Force disable</string>
-
-    <string name="shake_clear_recents">Shake to clear</string>
-    <string name="shake_clear_recents_summary">Clear recents by shaking your phone</string>
 
     <!-- Lock screen rotation -->
     <string name="display_lockscreen_rotation_title">Lock screen</string>

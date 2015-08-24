@@ -37,6 +37,7 @@ import com.android.settings.aicp.BatterySettings;
 import com.android.settings.aicp.BreathingNotifications;
 import com.android.settings.aicp.CarrierLabel;
 import com.android.settings.aicp.DisplayAnimationsSettings;
+import com.android.settings.aicp.HandControl;
 import com.android.settings.aicp.HeadsUpSettings;
 import com.android.settings.aicp.LockScreenColorSettings;
 import com.android.settings.aicp.LockScreenWeatherSettings;
@@ -116,18 +117,19 @@ public final class Ranking {
     public static final int RANK_HOME = 33;
     public static final int RANK_DISPLAY = 34;
     public static final int RANK_NOTIFICATIONS = 35;
-    public static final int RANK_STORAGE = 36;
-    public static final int RANK_POWER_USAGE = 37;
-    public static final int RANK_USERS = 38;
-    public static final int RANK_LOCATION = 39;
-    public static final int RANK_SECURITY = 40;
-    public static final int RANK_IME = 41;
-    public static final int RANK_PRIVACY = 42;
-    public static final int RANK_DATE_TIME = 43;
-    public static final int RANK_ACCESSIBILITY = 44;
-    public static final int RANK_PRINTING = 45;
-    public static final int RANK_DEVELOPEMENT = 46;
-    public static final int RANK_DEVICE_INFO = 47;
+    public static final int RANK_HAND = 36;
+    public static final int RANK_STORAGE = 37;
+    public static final int RANK_POWER_USAGE = 38;
+    public static final int RANK_USERS = 39;
+    public static final int RANK_LOCATION = 40;
+    public static final int RANK_SECURITY = 41;
+    public static final int RANK_IME = 42;
+    public static final int RANK_PRIVACY = 43;
+    public static final int RANK_DATE_TIME = 44;
+    public static final int RANK_ACCESSIBILITY = 45;
+    public static final int RANK_PRINTING = 46;
+    public static final int RANK_DEVELOPEMENT = 47;
+    public static final int RANK_DEVICE_INFO = 48;
 
     public static final int RANK_UNDEFINED = -1;
     public static final int RANK_OTHERS = 1024;
@@ -180,6 +182,9 @@ public final class Ranking {
 
         // AICP Display Animations Settings
         sRankMap.put(DisplayAnimationsSettings.class.getName(), RANK_DISPLAYANIMS);
+
+        // AICP HandControl
+        sRankMap.put(HandControl.class.getName(), RANK_HAND);
 
         // AICP HeadsUP
         sRankMap.put(HeadsUpSettings.class.getName(), RANK_HEADSUP);
