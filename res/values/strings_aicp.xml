@@ -1367,4 +1367,12 @@
     <string name="status_bar_custom_header_title">Custom header image</string>
     <string name="status_bar_custom_header_summary">Enable notification panel header image</string>
     
+    <!-- Aicp Settings Animations -->
+    <string name="aicp_animations_settings">Animations Settings</string>
+    <string name="system_animations_cat_title">System Animations</string>
+    <string name="keyboard_animations_cat_title">Keyboard Animations</string>
+    <string name="scroll_animations_cat_title">Scrolling Animations</string>
+    <string name="overscroll_effects_cat_title">Overscroll Effects</string>
+    <string name="more_animations_cat_title">More</string>
+
 </resources>
