@@ -42,6 +42,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.os.SystemClock;
 import android.os.UserHandle;
+import android.preference.CheckBoxPreference;
 import android.preference.SwitchPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
@@ -60,6 +61,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.android.settings.R;
@@ -107,6 +109,11 @@ public class VariousShit extends SettingsPreferenceFragment
     private static final String PREF_CUSTOM_BOOTANIM = "custom_bootanimation";
     private static final String BOOTANIMATION_SYSTEM_PATH = "/system/media/bootanimation.zip";
 
+    private static final String KEY_HIDDEN_SHIT = "hidden_shit";
+    private static final String KEY_HIDDEN_SHIT_UNLOCKED = "hidden_shit_unlocked";
+    private static final String KEY_HIDDEN_IMG = "hidden_img";
+    private static final String KEY_HIDDEN_YOGA = "hidden_anim";
+
     private static final String TORCH_CATEGORY = "torch_category";
     private static final String DISABLE_TORCH_ON_SCREEN_OFF = "disable_torch_on_screen_off";
     private static final String DISABLE_TORCH_ON_SCREEN_OFF_DELAY = "disable_torch_on_screen_off_delay";
@@ -114,6 +121,12 @@ public class VariousShit extends SettingsPreferenceFragment
     private static final String SELINUX = "selinux";
 
     private static final String CARRIERLABEL_ON_LOCKSCREEN="lock_screen_hide_carrier";
+
+    // Package name of the yoga
+    public static final String YOGA_PACKAGE_NAME = "com.android.settings";
+    // Intent for launching the yoga actvity
+    public static Intent INTENT_YOGA = new Intent(Intent.ACTION_MAIN)
+            .setClassName(YOGA_PACKAGE_NAME, YOGA_PACKAGE_NAME + ".aicp.HiddenAnimActivity");
 
     private static final String BACKUP_PATH = new File(Environment
             .getExternalStorageDirectory(), "/AICP_ota").getAbsolutePath();
@@ -137,6 +150,17 @@ public class VariousShit extends SettingsPreferenceFragment
     private SwitchPreference mSelinux;
     private SwitchPreference mCarrierLabelOnLockScreen;
 
+    private Preference mHiddenShit;
+    private PreferenceScreen mHiddenImg;
+    private CheckBoxPreference mHiddenShitUnlocked;
+    long[] mHits = new long[3];
+
+    private final ArrayList<Preference> mAllPrefs = new ArrayList<Preference>();
+    private final ArrayList<CheckBoxPreference> mResetCbPrefs
+            = new ArrayList<CheckBoxPreference>();
+
+    private Context mContext;
+
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
@@ -156,6 +180,26 @@ public class VariousShit extends SettingsPreferenceFragment
         mLockClock = (Preference) findPreference(KEY_LOCKCLOCK);
         if (!Helpers.isPackageInstalled(LOCKCLOCK_PACKAGE_NAME, pm)) {
             prefSet.removePreference(mLockClock);
+        }
+
+        // Hidden shit
+        mHiddenShit = (Preference) findPreference(KEY_HIDDEN_SHIT);
+        mHiddenImg = (PreferenceScreen) findPreference(KEY_HIDDEN_IMG);
+        mAllPrefs.add(mHiddenShit);
+        mHiddenShitUnlocked =
+                findAndInitCheckboxPref(KEY_HIDDEN_SHIT_UNLOCKED);
+        mHiddenShitUnlocked.setOnPreferenceChangeListener(this);
+
+        boolean hiddenShitOpened = Settings.System.getInt(
+                getActivity().getContentResolver(),
+                Settings.System.HIDDEN_SHIT, 0) == 1;
+        mHiddenShitUnlocked.setChecked(hiddenShitOpened);
+
+        if (hiddenShitOpened) {
+            mVariousShitScreen.removePreference(mHiddenShit);
+        } else {
+            mVariousShitScreen.removePreference(mHiddenShitUnlocked);
+            mVariousShitScreen.removePreference(mHiddenImg);
         }
 
         // Custom bootanimation
@@ -221,6 +265,35 @@ public class VariousShit extends SettingsPreferenceFragment
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+        if (preference == mHiddenShit) {
+            System.arraycopy(mHits, 1, mHits, 0, mHits.length-1);
+            mHits[mHits.length-1] = SystemClock.uptimeMillis();
+            if ((Settings.System.getInt(getActivity().getContentResolver(),
+                    Settings.System.HIDDEN_SHIT, 0) == 0) &&
+                    (mHits[0] >= (SystemClock.uptimeMillis()-500))) {
+                Settings.System.putInt(getActivity().getContentResolver(),
+                        Settings.System.HIDDEN_SHIT, 1);
+                Toast.makeText(getActivity(),
+                        R.string.hidden_shit_toast,
+                        Toast.LENGTH_LONG).show();
+                getPreferenceScreen().removePreference(mHiddenShit);
+                addPreference(mHiddenShitUnlocked);
+                mHiddenShitUnlocked.setChecked(true);
+                addPreference(mHiddenImg);
+            }
+        } else if (preference == mHiddenImg) {
+            System.arraycopy(mHits, 1, mHits, 0, mHits.length-1);
+            mHits[mHits.length-1] = SystemClock.uptimeMillis();
+            if  (mHits[0] >= (SystemClock.uptimeMillis()-500)) {
+                startActivity(INTENT_YOGA);
+            }
+        } else if (preference == mCustomBootAnimation) {
+            openBootAnimationDialog();
+            return true;
+        } else {
+            return super.onPreferenceTreeClick(preferenceScreen, preference);
+        }
+
         return false;
     }
 
@@ -228,7 +301,12 @@ public class VariousShit extends SettingsPreferenceFragment
     public boolean onPreferenceChange(Preference preference, Object objValue) {
         ContentResolver resolver = getActivity().getContentResolver();
         final String key = preference.getKey();
-        if (preference == mTorchOffDelay) {
+        if (preference == mHiddenShitUnlocked) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.HIDDEN_SHIT,
+                    (Boolean) objValue ? 1 : 0);
+            return true;
+        } else if (preference == mTorchOffDelay) {
             int torchOffDelay = Integer.valueOf((String) objValue);
             int index = mTorchOffDelay.findIndexOfValue((String) objValue);
             Settings.System.putIntForUser(getActivity().getContentResolver(),
@@ -252,6 +330,22 @@ public class VariousShit extends SettingsPreferenceFragment
             return true;
         }
         return false;
+    }
+
+    private void addPreference(Preference preference) {
+        getPreferenceScreen().addPreference(preference);
+        preference.setOnPreferenceChangeListener(this);
+        mAllPrefs.add(preference);
+    }
+
+    private CheckBoxPreference findAndInitCheckboxPref(String key) {
+        CheckBoxPreference pref = (CheckBoxPreference) findPreference(key);
+        if (pref == null) {
+            throw new IllegalArgumentException("Cannot find preference with key = " + key);
+        }
+        mAllPrefs.add(pref);
+        mResetCbPrefs.add(pref);
+        return pref;
     }
 
     /**
