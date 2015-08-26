@@ -24,8 +24,10 @@ import android.app.ActionBar;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
-import android.support.v13.app.FragmentPagerAdapter;
+import android.content.ActivityNotFoundException;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v13.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -63,7 +65,7 @@ public class AicpSettings extends SettingsPreferenceFragment implements ActionBa
     public View onCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         getActivity().setTitle("AICP Tools");
-        getActivity().setTheme(android.R.style.Theme_DeviceDefault_Light);
+        getActivity().setTheme(android.R.style.Theme.Material.Settings);
 	View view = inflater.inflate(R.layout.activity_aicp_settings, container, false);
 
 
@@ -197,6 +199,33 @@ public class AicpSettings extends SettingsPreferenceFragment implements ActionBa
         public PlaceholderFragment() {
         }
 
+    }
+
+    public void restart () {
+       try {
+            Intent intent = new Intent(Intent.ACTION_MAIN).setClassName(
+                    "com.android.settings", "com.android.settings.Settings$AicpSettingsActivity");
+            finish();
+            startActivity(intent);
+        } catch (ActivityNotFoundException ex) {
+            android.util.Log.e("AicpSettingsActivity", "Couldn't find aicp activity.");
+        }
+    }
+
+    @Override
+    public void onResume() {
+       super.onResume();
+       restart();
+    }
+
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle saveState) {
+        super.onSaveInstanceState(saveState);
     }
 
 }
