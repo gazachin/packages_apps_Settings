@@ -1367,4 +1367,10 @@
     <string name="status_bar_custom_header_title">Custom header image</string>
     <string name="status_bar_custom_header_summary">Enable notification panel header image</string>
     
+    <!-- Aicp Settings Tabs -->
+    <string name="aicp_settings_tab1">Inter Face</string>
+    <string name="aicp_settings_tab2">Stuff</string>
+    <string name="aicp_settings_tab3">System</string>
+    <string name="aicp_settings_tab4">Tweaks</string>
+
 </resources>
