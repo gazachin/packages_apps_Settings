@@ -440,7 +440,7 @@
     <string name="show_unac_and_overcounted_stats_summary">Show in battery statistics unaccounted and over-counted usage.</string>
 
     <!-- Gesture Anywhere -->
-    <string name="gesture_anywhere_title">Gesture</string>
+    <string name="gesture_anywhere_title">Gesture Anywhere</string>
     <string name="gesture_anywhere_enabled_title">Gesture Anywhere</string>
     <string name="gesture_anywhere_enabled_summary">Enable the Gesture Anywhere feature</string>
     <string name="gesture_anywhere_position_title">Location</string>
@@ -499,7 +499,7 @@
     <string name="profile_applist_title">Applications</string>
 
     <!-- Display and Animations -->
-    <string name="disp_anim_settings_title">Animations</string>
+    <string name="disp_anim_settings_title">Display and animations</string>
 
     <!-- ListView animation -->
     <string name="interface_settings_animation_title">Animation options</string>
@@ -978,7 +978,7 @@
     <string name="wakelock_blocker_warning">Blocking wakelocks have the potential to cause instability, crashes or data loss</string>
 
     <!-- Heads Up -->
-    <string name="category_heads_up">Heads up</string>
+    <string name="category_heads_up">Heads up notifications</string>
     <string name="add_heads_up_package">Add app</string>
     <string name="add_heads_up_dnd_summary">Don\'t show heads up in these applications</string>
     <string name="add_heads_up_blacklist_summary">Don\'t show heads up from these applications</string>
@@ -1108,7 +1108,7 @@
     <string name="status_bar_ticker_summary">Scroll notification text in the statusbar.</string>
 
     <!-- Pie control -->
-    <string name="pie_control_title">PIE</string>
+    <string name="pie_control_title">SlimPIE</string>
     <string name="pie_control_summary">Enable pie on screen navigation</string>
     <string name="pie_control_size">Navigation size</string>
     <string name="pie_control_trigger_positions">Trigger options</string>
