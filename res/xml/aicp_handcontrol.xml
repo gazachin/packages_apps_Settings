@@ -17,7 +17,6 @@
 
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:title="@string/handcontrol_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
     <!-- Shake to clear notifications -->
