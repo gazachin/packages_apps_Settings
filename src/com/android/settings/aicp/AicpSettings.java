@@ -21,27 +21,12 @@ import java.util.Locale;
 
 import android.app.Activity;
 import android.app.ActionBar;
-import android.app.Dialog;
-import android.app.DialogFragment;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
-import android.content.Context;
-import android.content.DialogInterface;
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.net.Uri;
-import android.text.Html;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.os.Bundle;
-import android.provider.Settings;
-import android.preference.Preference;
-import android.preference.PreferenceManager;
-import android.preference.Preference.OnPreferenceChangeListener;
-import android.preference.PreferenceScreen;
-
 import android.support.v13.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
@@ -51,14 +36,11 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
-import com.android.internal.util.cm.ScreenType;
 import com.android.settings.aicp.tabs.Interface;
 import com.android.settings.aicp.tabs.Stuff;
 import com.android.settings.aicp.tabs.System;
 import com.android.settings.aicp.tabs.Tweaks;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class AicpSettings extends SettingsPreferenceFragment implements ActionBar.TabListener {
 
@@ -83,6 +65,7 @@ public class AicpSettings extends SettingsPreferenceFragment implements ActionBa
     public View onCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         getActivity().setTitle("AICP Tools");
+        getActivity().setTheme(android.R.style.Theme.Material.Settings);
 	View view = inflater.inflate(R.layout.activity_aicp_settings, container, false);
 
 
@@ -170,6 +153,7 @@ public class AicpSettings extends SettingsPreferenceFragment implements ActionBa
 
         @Override
         public int getCount() {
+            // Show 4 total pages.
             return 4;
         }
 
@@ -215,6 +199,33 @@ public class AicpSettings extends SettingsPreferenceFragment implements ActionBa
         public PlaceholderFragment() {
         }
 
+    }
+
+    public void restart () {
+       try {
+            Intent intent = new Intent(Intent.ACTION_MAIN).setClassName(
+                    "com.android.settings", "com.android.settings.Settings$AicpSettingsActivity");
+            finish();
+            startActivity(intent);
+        } catch (ActivityNotFoundException ex) {
+            android.util.Log.e("AicpSettingsActivity", "Couldn't find aicp activity.");
+        }
+    }
+
+    @Override
+    public void onResume() {
+       super.onResume();
+       restart();
+    }
+
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle saveState) {
+        super.onSaveInstanceState(saveState);
     }
 
 }
