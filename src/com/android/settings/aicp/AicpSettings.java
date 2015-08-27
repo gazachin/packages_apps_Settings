@@ -42,7 +42,9 @@ import com.android.settings.aicp.tabs.System;
 import com.android.settings.aicp.tabs.Tweaks;
 
 
-public class AicpSettings extends SettingsPreferenceFragment implements ActionBar.TabListener {
+public class AicpSettings extends SettingsPreferenceFragment {
+
+    static Bundle mSavedState;
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -66,7 +68,7 @@ public class AicpSettings extends SettingsPreferenceFragment implements ActionBa
 
         getActivity().setTitle("AICP Tools");
 	View view = inflater.inflate(R.layout.activity_aicp_settings, container, false);
-
+        mViewPager = (ViewPager) view.findViewById(R.id.viewPager);
 
         // Set up the action bar.
         final ActionBar actionBar = getActivity().getActionBar();
