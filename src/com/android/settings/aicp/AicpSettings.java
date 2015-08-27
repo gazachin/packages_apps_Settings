@@ -35,22 +35,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import com.android.settings.R;
-import android.provider.SearchIndexableResource;
-import com.android.settings.search.BaseSearchIndexProvider;
-import com.android.settings.search.Indexable;
-import android.content.Context;
 import com.android.settings.SettingsPreferenceFragment;
-import com.android.settings.util.Helpers;
 import com.android.settings.aicp.tabs.Interface;
 import com.android.settings.aicp.tabs.Stuff;
 import com.android.settings.aicp.tabs.System;
 import com.android.settings.aicp.tabs.Tweaks;
 
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class AicpSettings extends SettingsPreferenceFragment implements ActionBar.TabListener, Indexable {
+public class AicpSettings extends SettingsPreferenceFragment implements ActionBar.TabListener {
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -74,6 +66,7 @@ public class AicpSettings extends SettingsPreferenceFragment implements ActionBa
 
         getActivity().setTitle("AICP Tools");
 	View view = inflater.inflate(R.layout.activity_aicp_settings, container, false);
+
 
         // Set up the action bar.
         final ActionBar actionBar = getActivity().getActionBar();
@@ -208,3 +201,4 @@ public class AicpSettings extends SettingsPreferenceFragment implements ActionBa
     }
 
  }
+
