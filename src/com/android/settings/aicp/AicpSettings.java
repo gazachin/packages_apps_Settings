@@ -64,7 +64,8 @@ public class AicpSettings extends SettingsPreferenceFragment implements ActionBa
     @Override
     public View onCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        getActivity().setTitle("AICP Tools");
+        getActivity().setTitle(R.string.aicp_settings_title);
+        getActivity().setTheme(R.style.aicp_tools);
 	View view = inflater.inflate(R.layout.activity_aicp_settings, container, false);
 
 

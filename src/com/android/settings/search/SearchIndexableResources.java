@@ -32,6 +32,10 @@ import com.android.settings.SecuritySettings;
 import com.android.settings.WirelessSettings;
 import com.android.settings.accessibility.AccessibilitySettings;
 import com.android.settings.aicp.AicpSettings;
+import com.android.settings.aicp.tabs.Interface;
+import com.android.settings.aicp.tabs.Stuff;
+import com.android.settings.aicp.tabs.System;
+import com.android.settings.aicp.tabs.Tweaks;
 import com.android.settings.aicp.AmbientSettings;
 import com.android.settings.aicp.AnimationControls;
 import com.android.settings.aicp.AppCircleBar;
@@ -327,6 +331,34 @@ public final class SearchIndexableResources {
                         Ranking.getRankForClassName(AicpSettings.class.getName()),
                         NO_DATA_RES_ID,
                         AicpSettings.class.getName(),
+                        R.drawable.ic_settings_aicp));
+
+        sResMap.put(Interface.class.getName(),
+                new SearchIndexableResource(
+                        Ranking.getRankForClassName(Interface.class.getName()),
+                        NO_DATA_RES_ID,
+                        Interface.class.getName(),
+                        R.drawable.ic_settings_aicp));
+
+        sResMap.put(Stuff.class.getName(),
+                new SearchIndexableResource(
+                        Ranking.getRankForClassName(Stuff.class.getName()),
+                        NO_DATA_RES_ID,
+                        Stuff.class.getName(),
+                        R.drawable.ic_settings_aicp));
+
+        sResMap.put(System.class.getName(),
+                new SearchIndexableResource(
+                        Ranking.getRankForClassName(System.class.getName()),
+                        NO_DATA_RES_ID,
+                        System.class.getName(),
+                        R.drawable.ic_settings_aicp));
+
+        sResMap.put(Tweaks.class.getName(),
+                new SearchIndexableResource(
+                        Ranking.getRankForClassName(Tweaks.class.getName()),
+                        NO_DATA_RES_ID,
+                        Tweaks.class.getName(),
                         R.drawable.ic_settings_aicp));
 
         sResMap.put(AnimationControls.class.getName(),

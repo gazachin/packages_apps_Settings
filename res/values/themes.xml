@@ -235,4 +235,5 @@
         <item name="android:colorAccent">@color/switch_accent_color</item>
     </style>
 
+    <style name="aicp_tools" parent="Theme.SettingsBase"></style>
 </resources>
