@@ -46,6 +46,7 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 import com.android.settings.widget.SeekBarPreferenceCham;
 
+import com.android.settings.util.Helpers;
 import com.android.internal.util.slim.DeviceUtils;
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
@@ -61,6 +62,7 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
     private static final String KEY_AICP_LOGO_COLOR = "status_bar_aicp_logo_color";
     private static final String KEY_AICP_LOGO_STYLE = "status_bar_aicp_logo_style";
     private static final String KEY_BREATHING_NOTIFICATIONS = "breathing_notifications";
+    private static final String CARRIERLABEL_ON_LOCKSCREEN="lock_screen_hide_carrier";
 
     private SwitchPreference mStatusBarBrightnessControl;
     private PreferenceScreen mCarrierLabel;
@@ -70,6 +72,7 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
     private ColorPickerPreference mAicpLogoColor;
     private ListPreference mAicpLogoStyle;
     private Preference mBreathingNotifications;
+    private SwitchPreference mCarrierLabelOnLockScreen;
 
     private String mCustomGreetingText = "";
 
@@ -145,6 +148,19 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
             prefSet.removePreference(mBreathingNotifications);
         }
 
+        //CarrierLabel on LockScreen
+        mCarrierLabelOnLockScreen = (SwitchPreference) findPreference(CARRIERLABEL_ON_LOCKSCREEN);
+        if (!Utils.isWifiOnly(getActivity())) {
+            mCarrierLabelOnLockScreen.setOnPreferenceChangeListener(this);
+
+            boolean hideCarrierLabelOnLS = Settings.System.getInt(
+                    getActivity().getContentResolver(),
+                    Settings.System.LOCK_SCREEN_HIDE_CARRIER, 0) == 1;
+            mCarrierLabelOnLockScreen.setChecked(hideCarrierLabelOnLS);
+        } else {
+            prefSet.removePreference(mCarrierLabelOnLockScreen);
+        }
+
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -174,6 +190,12 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
                     UserHandle.USER_CURRENT);
             mAicpLogoStyle.setSummary(
                     mAicpLogoStyle.getEntries()[index]);
+            return true;
+       } else if (preference == mCarrierLabelOnLockScreen) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.LOCK_SCREEN_HIDE_CARRIER,
+                    (Boolean) newValue ? 1 : 0);
+            Helpers.restartSystemUI();
             return true;
         }
         return false;
