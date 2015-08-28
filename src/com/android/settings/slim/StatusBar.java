@@ -77,7 +77,30 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
     private String mCustomGreetingText = "";
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+     public void onCreate(Bundle icicle) {
+         super.onCreate(icicle);
+ 
+         addPreferencesFromResource(R.xml.status_bar_settings);
+         mStatusBarScreen = (PreferenceScreen) findPreference("status_bar_screen");
+
+        //CarrierLabel on LockScreen
+        mCarrierLabelOnLockScreen = (SwitchPreference) findPreference(CARRIERLABEL_ON_LOCKSCREEN);
+        if (!Utils.isWifiOnly(getActivity())) {
+            mCarrierLabelOnLockScreen.setOnPreferenceChangeListener(this);
+
+            boolean hideCarrierLabelOnLS = Settings.System.getInt(
+                    getActivity().getContentResolver(),
+                    Settings.System.LOCK_SCREEN_HIDE_CARRIER, 0) == 1;
+            mCarrierLabelOnLockScreen.setChecked(hideCarrierLabelOnLS);
+        } else {
+            prefSet.removePreference(mCarrierLabelOnLockScreen);
+        }
+
+     }
+ 
+   @Override
+ 
+   public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.status_bar_settings);
@@ -148,19 +171,6 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
             prefSet.removePreference(mBreathingNotifications);
         }
 
-        //CarrierLabel on LockScreen
-        mCarrierLabelOnLockScreen = (SwitchPreference) findPreference(CARRIERLABEL_ON_LOCKSCREEN);
-        if (!Utils.isWifiOnly(getActivity())) {
-            mCarrierLabelOnLockScreen.setOnPreferenceChangeListener(this);
-
-            boolean hideCarrierLabelOnLS = Settings.System.getInt(
-                    getActivity().getContentResolver(),
-                    Settings.System.LOCK_SCREEN_HIDE_CARRIER, 0) == 1;
-            mCarrierLabelOnLockScreen.setChecked(hideCarrierLabelOnLS);
-        } else {
-            prefSet.removePreference(mCarrierLabelOnLockScreen);
-        }
-
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -191,17 +201,25 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
             mAicpLogoStyle.setSummary(
                     mAicpLogoStyle.getEntries()[index]);
             return true;
-       } else if (preference == mCarrierLabelOnLockScreen) {
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.LOCK_SCREEN_HIDE_CARRIER,
-                    (Boolean) newValue ? 1 : 0);
-            Helpers.restartSystemUI();
-            return true;
         }
         return false;
     }
 
-    @Override
+     @Override
+     public boolean onPreferenceChange(Preference preference, Object objValue) {
+         ContentResolver resolver = getActivity().getContentResolver();
+         final String key = preference.getKey();
+         if (preference == mCarrierLabelOnLockScreen) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.LOCK_SCREEN_HIDE_CARRIER,
+                    (Boolean) objValue ? 1 : 0);
+            Helpers.restartSystemUI();
+            return true;
+         }
+         return false;
+     }
+ 
+   @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
        if (preference == mStatusBarGreeting) {
            boolean enabled = mStatusBarGreeting.isChecked();
