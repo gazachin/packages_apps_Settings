@@ -59,7 +59,7 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
     private static final String KEY_STATUS_BAR_GREETING = "status_bar_greeting";
     private static final String KEY_STATUS_BAR_GREETING_TIMEOUT = "status_bar_greeting_timeout";
     private static final String KEY_AICP_LOGO_COLOR = "status_bar_aicp_logo_color";
-    private static final String KEY_AICPLOGO_STYLE = "status_bar_aicp_logo_style";
+    private static final String KEY_AICP_LOGO_STYLE = "status_bar_aicp_logo_style";
     private static final String KEY_BREATHING_NOTIFICATIONS = "breathing_notifications";
 
     private SwitchPreference mStatusBarBrightnessControl;
@@ -122,7 +122,7 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
         mStatusBarGreetingTimeout.setOnPreferenceChangeListener(this);
 
         mAicpLogoStyle = (ListPreference) findPreference(KEY_AICP_LOGO_STYLE);
-        int aicpLogoStyle = Settings.System.getIntForUser(mResolver,
+        int aicpLogoStyle = Settings.System.getIntForUser(getContentResolver(),
                 Settings.System.STATUS_BAR_AICP_LOGO_STYLE, 0,
                 UserHandle.USER_CURRENT);
         mAicpLogoStyle.setValue(String.valueOf(aicpLogoStyle));
@@ -166,11 +166,11 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
             Settings.System.putInt(getContentResolver(),
                     Settings.System.STATUS_BAR_AICP_LOGO_COLOR, intHex);
             return true;  
-        } else if (preference == mAicpLogoStyle) {
+       } else if (preference == mAicpLogoStyle) {
             int aicpLogoStyle = Integer.valueOf((String) newValue);
             int index = mAicpLogoStyle.findIndexOfValue((String) newValue);
             Settings.System.putIntForUser(
-                    mResolver, Settings.System.STATUS_BAR_AICP_LOGO_STYLE, aicpLogoStyle,
+                    getContentResolver(), Settings.System.STATUS_BAR_AICP_LOGO_STYLE, aicpLogoStyle,
                     UserHandle.USER_CURRENT);
             mAicpLogoStyle.setSummary(
                     mAicpLogoStyle.getEntries()[index]);
