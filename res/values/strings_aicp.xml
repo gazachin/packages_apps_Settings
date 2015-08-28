@@ -149,7 +149,7 @@
     <string name="ime_switcher_notify_summary">Display input method selector notification</string>
 
     <!-- Various shit -->
-    <string name="various_shit_title">Extra Mods</string>
+    <string name="various_shit_title">Extra Settings</string>
     <string name="battery_percentage_title">Battery percentage</string>
     <string name="battery_percentage_summary">Show percentage in battery icon.</string>
     <string name="proximity_on_wake_title">Proximity on wake</string>
@@ -807,10 +807,10 @@
     <!-- QuickSettings colors -->
     <string name="background_title">Background</string>
     <string name="icon_title">Icon</string>
-    <string name="qs_colors_title">Custom color options</string>
+    <string name="qs_colors_title">Color UI</string>
     <string name="reset_android">Android</string>
     <string name="reset_swag">Swag</string>
-    <string name="colors_title">QS colors</string>
+    <string name="colors_title">Quick Settings</string>
     <string name="text_title">Text</string>
     <string name="qs_transparent_shade_title">Shade alpha</string>
     <string name="qs_transparent_shade_summary">Ability to apply color alpha value and make notification shade transparent</string>

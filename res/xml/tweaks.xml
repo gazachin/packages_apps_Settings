@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <!-- Color Mod -->
+    <PreferenceScreen
+        android:key="qs_colors"
+        android:title="@string/qs_colors_title"
+        android:fragment="com.android.settings.aicp.QSColors" />
+
     <!-- Extra Mods -->
     <PreferenceScreen
         android:key="various_shit"
