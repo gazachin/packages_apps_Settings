@@ -120,6 +120,7 @@ public class VariousShit extends SettingsPreferenceFragment
 
     private static final String SELINUX = "selinux";
 
+    private static final String CARRIERLABEL_ON_LOCKSCREEN="lock_screen_hide_carrier";
 
     // Package name of the yoga
     public static final String YOGA_PACKAGE_NAME = "com.android.settings";
@@ -147,6 +148,7 @@ public class VariousShit extends SettingsPreferenceFragment
     private PreferenceCategory mTorchCategory;
     private Preference mLockClock;
     private SwitchPreference mSelinux;
+    private SwitchPreference mCarrierLabelOnLockScreen;
 
     private Preference mHiddenShit;
     private PreferenceScreen mHiddenImg;
@@ -231,6 +233,19 @@ public class VariousShit extends SettingsPreferenceFragment
             mSelinux.setSummary(R.string.selinux_permissive_title);
         }
 
+        //CarrierLabel on LockScreen
+        mCarrierLabelOnLockScreen = (SwitchPreference) findPreference(CARRIERLABEL_ON_LOCKSCREEN);
+        if (!Utils.isWifiOnly(getActivity())) {
+            mCarrierLabelOnLockScreen.setOnPreferenceChangeListener(this);
+
+            boolean hideCarrierLabelOnLS = Settings.System.getInt(
+                    getActivity().getContentResolver(),
+                    Settings.System.LOCK_SCREEN_HIDE_CARRIER, 0) == 1;
+            mCarrierLabelOnLockScreen.setChecked(hideCarrierLabelOnLS);
+        } else {
+            prefSet.removePreference(mCarrierLabelOnLockScreen);
+        }
+
     }
 
     @Override
@@ -306,6 +321,12 @@ public class VariousShit extends SettingsPreferenceFragment
                 CMDProcessor.runSuCommand("setenforce 0");
                 mSelinux.setSummary(R.string.selinux_permissive_title);
             }
+            return true;
+        } else if (preference == mCarrierLabelOnLockScreen) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.LOCK_SCREEN_HIDE_CARRIER,
+                    (Boolean) objValue ? 1 : 0);
+            Helpers.restartSystemUI();
             return true;
         }
         return false;
