@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class Interface extends SettingsPreferenceFragment {
+public class Interface extends SettingsPreferenceFragment implements Indexable {
 
     @Override
     public void onCreate(Bundle savedInstanceState)
