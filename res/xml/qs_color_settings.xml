@@ -71,4 +71,40 @@
            android:defaultValue="0xff384248" />
 
     </PreferenceCategory>
-</PreferenceScreen>
+    <PreferenceCategory
+        android:title="@string/qs_weather_title" >
+
+    <SwitchPreference
+	    android:key="expanded_header_show_weather"
+	    android:title="@string/expanded_header_show_weather_title"
+	    android:summary="@string/expanded_header_show_weather_summary"
+	    android:defaultValue="true" />
+
+    <SwitchPreference
+	    android:key="expanded_header_show_weather_location"
+	    android:title="@string/expanded_header_show_weather_location_title"
+	    android:summary="@string/expanded_header_show_weather_location_summary"
+	    android:defaultValue="true" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="expanded_header_category_color"
+        android:title="@string/header_colors_title">
+
+         <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="expanded_header_background_color"
+            android:title="@string/background_title"
+            android:defaultValue="0xff384248"
+            android:dependency="qs_color_switch" />
+
+         <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="expanded_header_text_color"
+            android:title="@string/text_title"
+            android:defaultValue="0xffffffff" />
+
+         <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="expanded_header_icon_color"
+            android:title="@string/icons_title"
+            android:defaultValue="0xffffffff" />
+
+	</PreferenceCategory>
+ </PreferenceScreen>
