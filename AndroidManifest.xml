@@ -2340,6 +2340,8 @@
             </intent-filter>
         </activity>
 
+        <activity android:name="com.android.settings.aicp.FlashNotifications" />
+
         <activity android:name=".applications.LockPatternActivity"
                   android:label="@string/protected_apps"
                   android:excludeFromRecents="true">
