@@ -807,10 +807,7 @@
     <!-- QuickSettings 4 columns -->
     <string name="qs_four_columns_title">Show four tiles per row</string>
 
-    <!-- QS Colors -->
-    <string name="qs_weather_title">Weather options</string>
-    <string name="qs_colors_title">Quick settings display options</string>
-    <string name="qs_color_options">Quick settings color options</string>
+    <!-- QuickSettings colors -->
     <string name="background_title">Background</string>
     <string name="icon_title">Icon</string>
     <string name="qs_colors_title">Color UI</string>
@@ -1106,21 +1103,8 @@
     <string name="notification_drawer_clear_all_icon_color_title">Icon</string>
 
     <!-- Expanded header color -->
-    <string name="background_header_title">Header Background Color</string>
+    <string name="background_header_title">Header background color</string>
     <string name="expanded_header_background_color_title">Color</string>
-    <string name="colors_title">Colors</string>
-    <string name="icons_title">Icons</string>
-    <string name="text_title">Text</string>
-    <string name="status_bar_expanded_header_settings_title">Expanded Header Colors</string>
-    <string name="header_colors_title">Expanded Header Colors</string>
-
-    <!-- Header -->
-    <string name="expanded_header_show_battery_status_text_title">Show battery status text</string>
-    <string name="expanded_header_show_battery_status_text_summary">Enable to show the (default) battery status text next to the battery icon</string>
-    <string name="expanded_header_show_weather_title">Show weather</string>
-    <string name="expanded_header_show_weather_summary">Enable to show the weather</string>
-    <string name="expanded_header_show_weather_location_title">Show location</string>
-    <string name="expanded_header_show_weather_location_summary">Enable to show the location</string>
 
     <!-- Task Manager -->
     <string name="enable_task_manager_title">Task Manager</string>
