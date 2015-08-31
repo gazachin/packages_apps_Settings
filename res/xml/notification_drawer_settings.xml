@@ -101,13 +101,6 @@
           android:summary="@string/status_bar_custom_header_summary"
           android:defaultValue="false"/>
 
-        <!-- Flash notifications -->
-        <com.android.settings.aicp.util.AicpPreferenceSwitch
-            android:key="flash_notifications_switch"
-            android:title="@string/flash_notifications_title"
-            android:fragment="com.android.settings.aicp.FlashNotifications" 
-            android:widgetLayout="@layout/listview_embedded_switchpreference" />
-
         <PreferenceScreen
                 android:key="navbar_targets_settings"
                 android:fragment="com.android.settings.slim.dslv.ActionListViewSettings"

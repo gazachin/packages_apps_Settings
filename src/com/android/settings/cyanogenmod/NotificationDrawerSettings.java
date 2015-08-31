@@ -39,8 +39,6 @@ import com.android.settings.cyanogenmod.qs.QSTiles;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 
-import com.android.settings.aicp.util.AicpPreferenceSwitch;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -57,7 +55,6 @@ public class NotificationDrawerSettings extends SettingsPreferenceFragment imple
     private static final String PREF_QS_SHOW_BRIGHTNESS_SLIDER = "qs_show_brightness_slider";
     private static final String PREF_ENABLE_TASK_MANAGER = "enable_task_manager";
     private static final String STATUS_BAR_POWER_MENU = "status_bar_power_menu";
-    private static final String KEY_FLASH_NOTIFICATIONS = "flash_notifications_switch";
 
     private Preference mQSTiles;
     private ListPreference mNumColumns;
@@ -67,7 +64,6 @@ public class NotificationDrawerSettings extends SettingsPreferenceFragment imple
     private SwitchPreference mBlockOnSecureKeyguard;
     private SwitchPreference mBrightnessSlider;
     private SwitchPreference mEnableTaskManager;
-    private AicpPreferenceSwitch mFlashPreference;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -135,9 +131,6 @@ public class NotificationDrawerSettings extends SettingsPreferenceFragment imple
         updateNumColumnsSummary(numColumns);
         mNumColumns.setOnPreferenceChangeListener(this);
         DraggableGridView.setColumnCount(numColumns);
-
-        mFlashPreference = (AicpPreferenceSwitch) findPreference(KEY_FLASH_NOTIFICATIONS);
-        mFlashPreference.setSettingToWatch(Settings.System.FLASH_NOTIFICATIONS, 1);
     }
 
     @Override
