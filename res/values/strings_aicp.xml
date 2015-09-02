@@ -499,7 +499,7 @@
     <string name="profile_applist_title">Applications</string>
 
     <!-- Display and Animations -->
-    <string name="disp_anim_settings_title">Display and animations</string>
+    <string name="disp_anim_settings_title">Display And Animations</string>
 
     <!-- ListView animation -->
     <string name="interface_settings_animation_title">Animation options</string>
@@ -647,8 +647,6 @@
     <!-- Lockscreen weather -->
     <string name="weather_cat_notifications_title">Notifications</string>
     <string name="lock_screen_weather_settings_title">Lock screen weather</string>
-    <string name="lock_screen_colors_title">Lock screen colors</string>
-    <string name="lock_screen_color_settings_summary">Customize colors</string>
     <string name="weather_show_weather_title">Show weather</string>
     <string name="weather_show_weather_summary">Enable to show weather informations</string>
     <string name="weather_show_location_title">Show location</string>
@@ -990,7 +988,7 @@
     <string name="wakelock_blocker_warning">Blocking wakelocks have the potential to cause instability, crashes or data loss</string>
 
     <!-- Heads Up -->
-    <string name="category_heads_up">Heads up notifications</string>
+    <string name="category_heads_up">Heads up Notifications</string>
     <string name="add_heads_up_package">Add app</string>
     <string name="add_heads_up_dnd_summary">Don\'t show heads up in these applications</string>
     <string name="add_heads_up_blacklist_summary">Don\'t show heads up from these applications</string>
@@ -1116,7 +1114,7 @@
     <string name="status_bar_ticker_summary">Scroll notification text in the statusbar.</string>
 
     <!-- Pie control -->
-    <string name="pie_control_title">SlimPIE</string>
+    <string name="pie_control_title">Slim PIE</string>
     <string name="pie_control_summary">Enable pie on screen navigation</string>
     <string name="pie_control_size">Navigation size</string>
     <string name="pie_control_trigger_positions">Trigger options</string>
@@ -1401,5 +1399,18 @@
     <!-- Chamber of Secrets -->
     <string name="chamber_title">Chamber of secrets</string>
     <string name="chamber_toast">The chamber of secrets has opened</string>
+
+    <!-- Lockscreen Colors -->
+    <string name="lockscreen_colors">Lockscreen Colors</string>
+    <string name="lockscreen_colors_summary">Change bottom shotcuts and text colors</string>
+    <string name="lockscreen_bottom_icons_color">Lockscreen Bottom shortcuts</string>
+    <string name="lockscreen_owner_info_color">Lockscreen Owner info text</string>
+    <string name="lockscreen_alarm_color">Lockscreen Alarm text</string>
+    <string name="lockscreen_indication_text_color">Lockscreen Indication text</string>
+    <string name="lockscreen_clock_color">Lockscreen Clock</string>
+    <string name="lockscreen_clock_date_color">Lockscreen Date</string>
+    <string name="lockscreen_colors_reset_title">Reset lockscreen colors</string>
+    <string name="lockscreen_colors_reset_message">Are you sure you want to reset these colors to default?</string>
+    <string name="yes">YES</string>
 
 </resources>

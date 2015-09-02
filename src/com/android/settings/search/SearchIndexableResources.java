@@ -46,7 +46,6 @@ import com.android.settings.aicp.CarrierLabel;
 import com.android.settings.aicp.DisplayAnimationsSettings;
 import com.android.settings.aicp.HeadsUpSettings;
 import com.android.settings.aicp.HandControl;
-import com.android.settings.aicp.LockScreenColorSettings;
 import com.android.settings.aicp.LockScreenWeatherSettings;
 import com.android.settings.aicp.NavBarDimensions;
 import com.android.settings.aicp.NetworkTrafficFragment;
@@ -415,13 +414,6 @@ public final class SearchIndexableResources {
                         Ranking.getRankForClassName(HeadsUpSettings.class.getName()),
                         NO_DATA_RES_ID,
                         HeadsUpSettings.class.getName(),
-                        R.drawable.ic_settings_aicp));
-
-        sResMap.put(LockScreenColorSettings.class.getName(),
-                new SearchIndexableResource(
-                        Ranking.getRankForClassName(LockScreenColorSettings.class.getName()),
-                        NO_DATA_RES_ID,
-                        LockScreenColorSettings.class.getName(),
                         R.drawable.ic_settings_aicp));
 
         sResMap.put(LockScreenWeatherSettings.class.getName(),

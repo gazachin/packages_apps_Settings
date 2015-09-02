@@ -42,7 +42,6 @@ import com.android.settings.aicp.CarrierLabel;
 import com.android.settings.aicp.DisplayAnimationsSettings;
 import com.android.settings.aicp.HandControl;
 import com.android.settings.aicp.HeadsUpSettings;
-import com.android.settings.aicp.LockScreenColorSettings;
 import com.android.settings.aicp.LockScreenWeatherSettings;
 import com.android.settings.aicp.NavBarDimensions;
 import com.android.settings.aicp.NetworkTrafficFragment;
@@ -206,9 +205,6 @@ public final class Ranking {
 
         // AICP Ambient Settings
         sRankMap.put(AmbientSettings.class.getName(), RANK_AMBIENT);
-
-        // AICP Lockscreen Color
-        sRankMap.put(LockScreenColorSettings.class.getName(), RANK_LSCOLOR);
 
         // AICP Lockscreen Weather
         sRankMap.put(LockScreenWeatherSettings.class.getName(), RANK_LSWEATHER);
