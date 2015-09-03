@@ -336,8 +336,6 @@
     <string name="navigation_bar_arrow_keys_title">Show arrow keys while typing</string>
     <string name="navigation_bar_arrow_keys_summary">Display left and right cursor buttons while typing. Overrides IME switcher.</string>
     <string name="navigation_bar_recents_title">Recents long press action</string>
-    <string name="accessibility_dpad_left">Cursor left</string>
-    <string name="accessibility_dpad_right">Cursor right</string>
 
     <!-- Launch Dev Tools -->
     <string name="development_tools_title">Development tools</string>
@@ -885,7 +883,7 @@
     <string name="advanced_reboot_summary">When unlocked, include options in the power menu for rebooting into recovery, bootloader or performing a soft reboot</string>
 
     <!-- Notification drawer -->
-    <string name="notification_drawer_title">Notification Drawer</string>
+    <string name="notification_drawer_title">Notification drawer</string>
     <string name="qs_category_title">Quick Settings</string>
 
     <!-- Quick Settings -->
