@@ -788,7 +788,6 @@
     <string name="qs_screenshot_tile">Screenshot</string>
     <string name="qs_screenrecord_tile">Screenrecord</string>
     <string name="qs_sync_tile">Sync</string>
-    <string name="qs_tile_navbar">Navigation Bar</string>
     <string name="qs_tile_powermenu">Power Menu</string>
     <string name="qs_tile_slimpie">Pie Control</string>
     <string name="qs_battery_saver_tile">Battery saver</string>
