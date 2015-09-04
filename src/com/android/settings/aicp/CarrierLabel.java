@@ -67,7 +67,7 @@ public class CarrierLabel extends SettingsPreferenceFragment implements OnPrefer
     private ListPreference mStatusBarCarrier;
     private PreferenceScreen mCustomCarrierLabel;
     private String mCustomCarrierLabelText;
-    private SeekBarPreference mStatusBarCarrierSize;
+    private SeekBarPreferenceCham mStatusBarCarrierSize;
     private ColorPickerPreference mCarrierColorPicker;
 
     @Override
