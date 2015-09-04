@@ -707,6 +707,7 @@
     <string name="clock_font_light">Light</string>
     <string name="clock_font_light_italic">Light italic</string>
     <string name="clock_font_normal">Normal</string>
+    <string name="clock_font_size_title">Font size</string>
 
     <!-- Recents panel settings -->
     <string name="recents_panel_settings">Recents Panel Settings</string>
