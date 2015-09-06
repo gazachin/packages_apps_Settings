@@ -982,6 +982,7 @@
   <string name="show_cpu_info_summary">Информация о процессоре отображается на экране</string>
 
   <!-- QuickSettings haptic feedback -->
+=======
     <!-- About phone screen, AICP version name-->
     <string name="mod_version">Версия AICP</string>
     <!-- About phone screen, AICP unknown name-->
