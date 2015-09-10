@@ -110,7 +110,6 @@
     <PreferenceScreen
             android:key="network_traffic_state"
             android:fragment="com.android.settings.aicp.NetworkTrafficFragment"
-            android:summary="@string/network_traffic_vector_summary"
             android:title="@string/network_traffic_vector_title" />
 
     <!-- Breathing Notifications -->

@@ -655,7 +655,6 @@
 
     <!-- Lockscreen weather -->
     <string name="lock_screen_colors_title">Weather Colors</string>
-    <string name="lock_screen_color_settings_summary">Customize colors</string>
     <string name="weather_cat_notifications_title">Notifications</string>
     <string name="lock_screen_weather_settings_title">Lock screen weather</string>
     <string name="weather_show_weather_title">Show weather</string>
@@ -1068,8 +1067,7 @@
     <string name="nfc_polling_mode_screen_unlocked">Screen on, unlocked (default)</string>
 
     <!-- Network traffic -->
-    <string name="network_traffic_vector_title">Network traffic</string>
-    <string name="network_traffic_vector_summary">Enable various network traffic options in statusbar</string>
+    <string name="network_traffic_vector_title">Network Traffic</string>
     <string name="show_network_traffic_disable">Disabled</string>
     <string name="network_traffic_hide_arrow">Hide arrows</string>
     <string name="network_traffic_hide_arrow_summary">Hide the traffic arrow indicator</string>
@@ -1267,7 +1265,7 @@
     <string name="restart_systemui">Restart SystemUI</string>
 
    <!-- Breathing Notifications -->
-    <string name="breathing_notifications_title">Breathing notifications</string>
+    <string name="breathing_notifications_title">Breathing Notifications</string>
     <string name="sms_breath_title">Breathing SMS</string>
     <string name="sms_breath_summary">Will give your sms notifications a breathing effect in the statusbar</string>
     <string name="missed_call_breath_title">Breathing Missed Call</string>
@@ -1321,7 +1319,7 @@
     <string name="lock_screen_hide_carrier_summary">SystemUI will be restarted on switch toggle.</string>
 
     <!-- Status bar temperature -->
-    <string name="status_bar_temperature_title">Weather temperature</string>
+    <string name="status_bar_temperature_title">Weather Temperature</string>
     <string name="status_bar_temperature_hidden">Hidden</string>
     <string name="status_bar_temperature_show_scale">Shown with scale</string>
     <string name="status_bar_temperature_hide_scale">Shown without scale</string>
@@ -1433,7 +1431,6 @@
 
     <!-- Lockscreen Colors -->
     <string name="lockscreen_colors">Lockscreen Colors</string>
-    <string name="lockscreen_colors_summary">Change bottom shotcuts and text colors</string>
     <string name="lockscreen_bottom_icons_color">Lockscreen Bottom shortcuts</string>
     <string name="lockscreen_owner_info_color">Lockscreen Owner info text</string>
     <string name="lockscreen_alarm_color">Lockscreen Alarm text</string>
