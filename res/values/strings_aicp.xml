@@ -195,12 +195,6 @@
     <string name="clock_enabled">Enabled</string>
     <string name="clock_disabled">Disabled</string>
     <string name="clock_color_title">Color</string>
-    <string name="clock_color_title">Clock olor</string>
-    <string name="date_color_title">Date color</string>
-    <string name="alarm_color_title">Alarm color</string>
-    <string name="ampm_color_title">AmPm color</string>
-    <string name="weather1_color_title">Weather line 1 color</string>
-    <string name="weather2_color_title">Weather line 2 color</string>
     <string name="status_bar_clock_style_reset">Reset color</string>
     <string name="status_bar_show_clock_title">Show clock and date</string>
     <string name="status_bar_am_pm_title">AM/PM</string>

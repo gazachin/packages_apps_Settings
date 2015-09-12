@@ -70,36 +70,5 @@
            android:title="@string/expanded_header_background_color_title"
            android:defaultValue="0xff384248" />
 
-        <net.margaritov.preference.colorpicker.ColorPickerPreference
-            android:key="expanded_header_clock_color"
-            android:title="@string/clock_color_title"
-            android:defaultValue="0xffffffff" />
-
-         <net.margaritov.preference.colorpicker.ColorPickerPreference
-            android:key="expanded_header_ampm_color"
-            android:title="@string/ampm_color_title"
-            android:defaultValue="0xffffffff" />
-
-         <net.margaritov.preference.colorpicker.ColorPickerPreference
-            android:key="expanded_header_date_color"
-            android:title="@string/date_color_title"
-            android:defaultValue="0xffffffff" />
-
-         <net.margaritov.preference.colorpicker.ColorPickerPreference
-            android:key="expanded_header_alarm_color"
-            android:title="@string/alarm_color_title"
-            android:defaultValue="0xffffffff" />
-
-         <net.margaritov.preference.colorpicker.ColorPickerPreference
-            android:key="expanded_header_weather1_color"
-            android:title="@string/weather1_color_title"
-            android:defaultValue="0xffffffff"
-            android:dependency="expanded_header_show_weather" />
-
-         <net.margaritov.preference.colorpicker.ColorPickerPreference
-            android:key="expanded_header_weather2_color"
-            android:title="@string/weather2_color_title"
-            android:defaultValue="0xffffffff" />
-
     </PreferenceCategory>
 </PreferenceScreen>
